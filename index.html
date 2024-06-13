@@ -91,7 +91,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="核心思想与数学推导："><a href="#核心思想与数学推导：" class="headerlink" title="核心思想与数学推导："></a>核心思想与数学推导：</h3><p>GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：</p>
+        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="核心思想与数学推导："><a href="#核心思想与数学推导：" class="headerlink" title="核心思想与数学推导："></a>核心思想与数学推导：</h3><p>Following that logic, our co-occurrence matrix will look like this:</p>
+<p><img src="https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-379633f727a3768188076980b4e4a3a2_l3.svg" alt="Rendered by QuickLaTeX.com"></p>
+<p>From the table above, we can notice that the co-occurrence matrix is symmetric. It means that the value with row X and column Y will be the same as the value with row Y and column X. <strong>In general, we don’t need to keep all elements from the text corpus in the co-occurrence matrix but only those of interest.</strong><br>GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：</p>
 <ol>
 <li><p><strong>共现矩阵的构建</strong>：根据语料库构建一个共现矩阵 (X)，其中元素 (X_{ij}) 表示单词 (i) 和上下文单词 (j) 在特定上下文窗口内共同出现的次数。</p>
 </li>
