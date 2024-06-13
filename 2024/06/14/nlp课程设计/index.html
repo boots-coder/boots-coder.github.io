@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://boots-coder.github.io">
   <title>nlp课程设计 | coderboots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="nlp 课程设计GloVE概述与引言：Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origi">
+  <meta name="description" content="nlp 课程设计 GloVE 概述与引言： Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the or">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nlp课程设计">
 <meta property="og:url" content="https://boots-coder.github.io/2024/06/14/nlp%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="coderboots">
-<meta property="og:description" content="nlp 课程设计GloVE概述与引言：Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origi">
+<meta property="og:description" content="nlp 课程设计 GloVE 概述与引言： Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the or">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613202142315.png">
 <meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613192113460.png">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613210222568.png">
 <meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613210204537.png">
 <meta property="article:published_time" content="2024-06-13T23:34:29.000Z">
-<meta property="article:modified_time" content="2024-06-13T23:35:52.212Z">
+<meta property="article:modified_time" content="2024-06-13T23:46:34.123Z">
 <meta property="article:tag" content="nlp">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613202142315.png">
@@ -175,18 +175,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="nlp-课程设计"><a href="#nlp-课程设计" class="headerlink" title="nlp 课程设计"></a>nlp 课程设计</h1><h2 id="GloVE"><a href="#GloVE" class="headerlink" title="GloVE"></a>GloVE</h2><h3 id="概述与引言："><a href="#概述与引言：" class="headerlink" title="概述与引言："></a>概述与引言：</h3><p>Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new &#x3D;&#x3D;global log-bilinear regression model&#x3D;&#x3D; that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by &#x3D;&#x3D;training only on the nonzero elements in a word-word co-occurrence matrix&#x3D;&#x3D;, rather than on the entire sparse matrix or on individual context windows in a large corpus. The model produces a vector space with meaningful substructure, as evidenced by its performance of 75% on a recent word analogy task. It also outperforms related models on similarity tasks and named entity recognition.</p>
-<h3 id="基本思想与优势："><a href="#基本思想与优势：" class="headerlink" title="基本思想与优势："></a>基本思想与优势：</h3><p>The two main model families for learning word vectors are: </p>
+        <h1>nlp 课程设计</h1>
+<h2 id="GloVE">GloVE</h2>
+<h3 id="概述与引言：">概述与引言：</h3>
+<p>Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new ==global log-bilinear regression model== that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by ==training only on the nonzero elements in a word-word co-occurrence matrix==, rather than on the entire sparse matrix or on individual context windows in a large corpus. The model produces a vector space with meaningful substructure, as evidenced by its performance of 75% on a recent word analogy task. It also outperforms related models on similarity tasks and named entity recognition.</p>
+<span id="more"></span> 
+<h3 id="基本思想与优势：">基本思想与优势：</h3>
+<p>The two main model families for learning word vectors are:</p>
 <ol>
 <li>global matrix factorization methods, such as latent semantic analysis (LSA) (Deerwester et al., 1990) and</li>
 <li>local context window methods, such as the skip-gram model of Mikolov et al. (2013c).</li>
 </ol>
 <p>Currently, both families suffer significant drawbacks.</p>
-<p> While methods like LSA efficiently leverage statistical information, they do relatively &#x3D;&#x3D;poorly on the word analogy task&#x3D;&#x3D;, indicating a sub-optimal vector space structure. </p>
-<p>Methods like skip-gram may do better on the analogy task, but they&#x3D;&#x3D;poorly utilize the statistics of the corpus&#x3D;&#x3D; since they train on separate local context windows instead of on global co-occurrence counts.</p>
+<p>While methods like LSA efficiently leverage statistical information, they do relatively ==poorly on the word analogy task==, indicating a sub-optimal vector space structure.</p>
+<p>Methods like skip-gram may do better on the analogy task, but they==poorly utilize the statistics of the corpus== since they train on separate local context windows instead of on global co-occurrence counts.</p>
 <p>In this work, we analyze the model properties necessary to produce linear directions of meaning and argue that global log-bilinear regression models are appropriate for doing so. We propose a specific weighted least squares model that trains on global word-word co-occurrence counts and thus makes efficient use of statistics. The model produces a word vector space with meaningful substructure, as evidenced by its state-of-the-art performance of 75% accuracy on the word analogy dataset. We also demonstrate that our methods outperform other current methods on several word similarity tasks, and also on a common named entity recognition (NER) benchmark.</p>
 <p>引用： <a target="_blank" rel="noopener" href="https://nlp.stanford.edu/pubs/glove.pdf">https://nlp.stanford.edu/pubs/glove.pdf</a></p>
-<h3 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h3><p>Matrix factorization methods for generating low-dimensional word representations have roots stretching as far back as LSA. These methods utilize low-rank approximations to decompose large matrices that capture statistical information about a corpus. The particular type of information captured by such matrices varies by application. In LSA, the matrices are of “term-document” type, i.e., the rows correspond to words or terms, and the columns correspond to different documents in the corpus.</p>
+<h3 id="Related-work">Related work</h3>
+<p>Matrix factorization methods for generating low-dimensional word representations have roots stretching as far back as LSA. These methods utilize low-rank approximations to decompose large matrices that capture statistical information about a corpus. The particular type of information captured by such matrices varies by application. In LSA, the matrices are of “term-document” type, i.e., the rows correspond to words or terms, and the columns correspond to different documents in the corpus.</p>
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613202142315.png" alt="image-20240613202142315"></p>
 <p>A main problem with HAL and related methods is that the most frequent words contribute a disproportionate amount to the similarity measure: the number of times two words co-occur with “the” or “and”, for example, will have a large effect on their similarity despite conveying relatively little about their semantic relatedness.</p>
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613192113460.png" alt="image-20240613192113460"></p>
@@ -195,24 +201,44 @@
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613192639091.png" alt="image-20240613192639091"></p>
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613192939546.png" alt="image-20240613192939546"></p>
 <p>Collobert and Weston (2008) decoupled the word vector training from the downstream training objectives, which paved the way for Collobert et al. (2011) to use the full context of a word for learning the word representations, rather than just the preceding context as is the case with language models.</p>
-<p>Recently, the importance of the full neural network structure for learning useful word representations has been called into question. </p>
-<p>The skip-gram and continuous bag-of-words (CBOW) models of Mikolov et al. (2013a) propose a simple single-layer architecture based on the inner product between two word vectors. Mnih and Kavukcuoglu (2013) also proposed closely-related vector log-bilinear models, vLBL and ivLBL, and Levy et al. (2014) proposed explicit word embeddings based on a PPMI metric. In the skip-gram and ivLBL models, the objective is to predict a word’s context given the word itself, whereas the objective in the CBOW and vLBL models is to predict a word given its context. </p>
+<p>Recently, the importance of the full neural network structure for learning useful word representations has been called into question.</p>
+<p>The skip-gram and continuous bag-of-words (CBOW) models of Mikolov et al. (2013a) propose a simple single-layer architecture based on the inner product between two word vectors. Mnih and Kavukcuoglu (2013) also proposed closely-related vector log-bilinear models, vLBL and ivLBL, and Levy et al. (2014) proposed explicit word embeddings based on a PPMI metric. In the skip-gram and ivLBL models, the objective is to predict a word’s context given the word itself, whereas the objective in the CBOW and vLBL models is to predict a word given its context.</p>
 <p>Through evaluation on a word analogy task, these models demonstrated the capacity to learn linguistic patterns as linear relationships between the word vectors.</p>
-<p> Unlike the matrix factorization methods, the shallow window-based methods suffer from the disadvantage that they do not operate directly on the co-occurrence statistics of the corpus. Instead, these models scan context windows across the entire corpus, which fails to take advantage of the vast amount of repetition in the data.</p>
+<p>Unlike the matrix factorization methods, the shallow window-based methods suffer from the disadvantage that they do not operate directly on the co-occurrence statistics of the corpus. Instead, these models scan context windows across the entire corpus, which fails to take advantage of the vast amount of repetition in the data.</p>
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613211037513.png" alt="image-20240613211037513"></p>
-<h3 id="核心思想与数学推导："><a href="#核心思想与数学推导：" class="headerlink" title="核心思想与数学推导："></a>核心思想与数学推导：</h3><p>GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：</p>
+<h3 id="核心思想与数学推导：">核心思想与数学推导：</h3>
+<p>GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：</p>
 <ol>
-<li><p><strong>共现矩阵的构建</strong>：根据语料库构建一个共现矩阵 (X)，其中元素 (X_{ij}) 表示单词 (i) 和上下文单词 (j) 在特定上下文窗口内共同出现的次数。</p>
+<li>
+<p><strong>共现矩阵的构建</strong>：根据语料库构建一个共现矩阵 (X)，其中元素 (X_{ij}) 表示单词 (i) 和上下文单词 (j) 在特定上下文窗口内共同出现的次数。</p>
 </li>
-<li><p><strong>近似关系的公式</strong>：提出词向量与共现矩阵之间的近似关系：<br>$$<br>w_i^T \tilde{w_j} + b_i + \tilde{b_j} &#x3D; \log(X_{ij})<br>$$<br>其中， (w_i) 和 (\tilde{w_j}) 是词向量， (b_i) 和 (\tilde{b_j}) 是偏置项。</p>
+<li>
+<p><strong>近似关系的公式</strong>：提出词向量与共现矩阵之间的近似关系：<br>
+$$<br>
+w_i^T \tilde{w_j} + b_i + \tilde{b_j} = \log(X_{ij})<br>
+$$<br>
+其中， (w_i) 和 (\tilde{w_j}) 是词向量， (b_i) 和 (\tilde{b_j}) 是偏置项。</p>
 </li>
-<li><p><strong>损失函数的构建</strong>：<br>$$<br>J &#x3D; \sum_{i,j&#x3D;1}^{V} f(X_{ij}) (w_i^T \tilde{w_j} + b_i + \tilde{b_j} - \log(X_{ij}))^2<br>$$<br>损失函数使用了一个加权函数 (f(X_{ij}))，其目的是对频繁共现的单词赋予更大的权重，同时避免权重过大。</p>
+<li>
+<p><strong>损失函数的构建</strong>：<br>
+$$<br>
+J = \sum_{i,j=1}^{V} f(X_{ij}) (w_i^T \tilde{w_j} + b_i + \tilde{b_j} - \log(X_{ij}))^2<br>
+$$<br>
+损失函数使用了一个加权函数 (f(X_{ij}))，其目的是对频繁共现的单词赋予更大的权重，同时避免权重过大。</p>
 </li>
-<li><p><strong>权重函数的形式</strong>：选择分段函数形式的权重函数：<br>$$<br>f(x) &#x3D; \begin{cases}<br>(x&#x2F;x_{max})^\alpha &amp; \text{if } x &lt; x_{max} \<br>1 &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
+<li>
+<p><strong>权重函数的形式</strong>：选择分段函数形式的权重函数：<br>
+$$<br>
+f(x) = \begin{cases}<br>
+(x/x_{max})^\alpha &amp; \text{if } x &lt; x_{max} \<br>
+1 &amp; \text{otherwise}<br>
+\end{cases}<br>
+$$</p>
 </li>
 </ol>
 <p>引用 ：<a target="_blank" rel="noopener" href="https://www.fanyeong.com/2018/02/19/glove-in-detail/">https://www.fanyeong.com/2018/02/19/glove-in-detail/</a></p>
-<h3 id="扩展–-Example-of-Co-occurrence-Matrices"><a href="#扩展–-Example-of-Co-occurrence-Matrices" class="headerlink" title="扩展– Example of Co-occurrence Matrices"></a>扩展– Example of Co-occurrence Matrices</h3><p>As an example, let’s use three sentences below:</p>
+<h3 id="扩展-Example-of-Co-occurrence-Matrices">扩展-- Example of Co-occurrence Matrices</h3>
+<p>As an example, let’s use three sentences below:</p>
 <blockquote>
 <p>Apples are green and red.</p>
 <p>Red apples are sweet.</p>
@@ -223,31 +249,50 @@
 <p><img src="https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-379633f727a3768188076980b4e4a3a2_l3.svg" alt="Rendered by QuickLaTeX.com"></p>
 <p>From the table above, we can notice that the co-occurrence matrix is symmetric. It means that the value with row X and column Y will be the same as the value with row Y and column X. <strong>In general, we don’t need to keep all elements from the text corpus in the co-occurrence matrix but only those of interest.</strong></p>
 <p><strong>For instance, before creating a matrix, it would be useful to clean text, remove stop words, implement <a target="_blank" rel="noopener" href="https://www.baeldung.com/cs/stemming-vs-lemmatization">stemming and lemmatization</a>, and similar.</strong></p>
-<h3 id="扩展–熵归一化的具体操作"><a href="#扩展–熵归一化的具体操作" class="headerlink" title="扩展–熵归一化的具体操作"></a>扩展–熵归一化的具体操作</h3><p>熵归一化是一种通过计算共现矩阵中每个元素的信息熵，对原始计数进行归一化处理的方法。它能够有效地减少高频元素对整体计算的影响。下面通过具体的步骤和例子来说明熵归一化的操作过程。</p>
-<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ol>
-<li><p><strong>计算共现矩阵</strong>：</p>
+<h3 id="扩展–熵归一化的具体操作">扩展–熵归一化的具体操作</h3>
+<p>熵归一化是一种通过计算共现矩阵中每个元素的信息熵，对原始计数进行归一化处理的方法。它能够有效地减少高频元素对整体计算的影响。下面通过具体的步骤和例子来说明熵归一化的操作过程。</p>
+<h4 id="步骤">步骤</h4>
+<ol>
+<li>
+<p><strong>计算共现矩阵</strong>：</p>
 <ul>
 <li>首先，构建一个词-词共现矩阵 (M)，其中 (M_{ij}) 表示词 (i) 和词 (j) 的共现次数。</li>
 </ul>
 </li>
-<li><p><strong>计算每个词的边际概率</strong>：</p>
+<li>
+<p><strong>计算每个词的边际概率</strong>：</p>
 <ul>
-<li>计算词 (i) 出现的概率 (P(w_i))，即词 (i) 在所有共现中的总出现次数除以所有共现的总次数：<br>[<br>P(w_i) &#x3D; \frac{\sum_{j} M_{ij}}{\sum_{i} \sum_{j} M_{ij}}<br>]</li>
+<li>计算词 (i) 出现的概率 (P(w_i))，即词 (i) 在所有共现中的总出现次数除以所有共现的总次数：<br>
+[<br>
+P(w_i) = \frac{\sum_{j} M_{ij}}{\sum_{i} \sum_{j} M_{ij}}<br>
+]</li>
 </ul>
 </li>
-<li><p><strong>计算每对词的联合概率</strong>：</p>
+<li>
+<p><strong>计算每对词的联合概率</strong>：</p>
 <ul>
-<li>计算词 (i) 和词 (j) 同时出现的概率 (P(w_i, w_j))，即 (M_{ij}) 除以所有共现的总次数：<br>[<br>P(w_i, w_j) &#x3D; \frac{M_{ij}}{\sum_{i} \sum_{j} M_{ij}}<br>]</li>
+<li>计算词 (i) 和词 (j) 同时出现的概率 (P(w_i, w_j))，即 (M_{ij}) 除以所有共现的总次数：<br>
+[<br>
+P(w_i, w_j) = \frac{M_{ij}}{\sum_{i} \sum_{j} M_{ij}}<br>
+]</li>
 </ul>
 </li>
-<li><p><strong>计算信息熵</strong>：</p>
+<li>
+<p><strong>计算信息熵</strong>：</p>
 <ul>
-<li>计算每对词的点互信息（PMI），并应用熵归一化公式：<br>[<br>PMI(w_i, w_j) &#x3D; \log \frac{P(w_i, w_j)}{P(w_i) P(w_j)}<br>]</li>
-<li>如果PMI值为负，则取0，否则保留正值，即正点互信息（PPMI）：<br>[<br>PPMI(w_i, w_j) &#x3D; \max(PMI(w_i, w_j), 0)<br>]</li>
+<li>计算每对词的点互信息（PMI），并应用熵归一化公式：<br>
+[<br>
+PMI(w_i, w_j) = \log \frac{P(w_i, w_j)}{P(w_i) P(w_j)}<br>
+]</li>
+<li>如果PMI值为负，则取0，否则保留正值，即正点互信息（PPMI）：<br>
+[<br>
+PPMI(w_i, w_j) = \max(PMI(w_i, w_j), 0)<br>
+]</li>
 </ul>
 </li>
 </ol>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>假设我们有一个简单的语料库，包含以下单词共现信息：</p>
+<h4 id="示例">示例</h4>
+<p>假设我们有一个简单的语料库，包含以下单词共现信息：</p>
 <table>
 <thead>
 <tr>
@@ -255,7 +300,8 @@
 <th>共现次数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>(dog, bark)</td>
 <td>100</td>
 </tr>
@@ -279,7 +325,8 @@
 <td>(bird, chirp)</td>
 <td>70</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>我们将构建一个3×3的共现矩阵 (M)：</p>
 <table>
 <thead>
@@ -290,7 +337,8 @@
 <th>bird</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>bark</td>
 <td>100</td>
 <td>0</td>
@@ -320,31 +368,35 @@
 <td>0</td>
 <td>70</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol>
-<li><p><strong>计算每个词的边际概率</strong>：</p>
+<li>
+<p><strong>计算每个词的边际概率</strong>：</p>
 <ul>
-<li>(P(bark) &#x3D; \frac{100}{430} \approx 0.2326)</li>
-<li>(P(run) &#x3D; \frac{90}{430} \approx 0.2093)</li>
-<li>(P(fly) &#x3D; \frac{90}{430} \approx 0.2093)</li>
-<li>(P(meow) &#x3D; \frac{80}{430} \approx 0.1860)</li>
-<li>(P(chirp) &#x3D; \frac{70}{430} \approx 0.1628)</li>
+<li>(P(bark) = \frac{100}{430} \approx 0.2326)</li>
+<li>(P(run) = \frac{90}{430} \approx 0.2093)</li>
+<li>(P(fly) = \frac{90}{430} \approx 0.2093)</li>
+<li>(P(meow) = \frac{80}{430} \approx 0.1860)</li>
+<li>(P(chirp) = \frac{70}{430} \approx 0.1628)</li>
 </ul>
 </li>
-<li><p><strong>计算每对词的联合概率</strong>：</p>
+<li>
+<p><strong>计算每对词的联合概率</strong>：</p>
 <ul>
-<li>(P(dog, bark) &#x3D; \frac{100}{430} \approx 0.2326)</li>
-<li>(P(dog, run) &#x3D; \frac{50}{430} \approx 0.1163)</li>
-<li>(P(cat, meow) &#x3D; \frac{80}{430} \approx 0.1860)</li>
-<li>(P(cat, run) &#x3D; \frac{40}{430} \approx 0.0930)</li>
-<li>(P(bird, fly) &#x3D; \frac{90}{430} \approx 0.2093)</li>
-<li>(P(bird, chirp) &#x3D; \frac{70}{430} \approx 0.1628)</li>
+<li>(P(dog, bark) = \frac{100}{430} \approx 0.2326)</li>
+<li>(P(dog, run) = \frac{50}{430} \approx 0.1163)</li>
+<li>(P(cat, meow) = \frac{80}{430} \approx 0.1860)</li>
+<li>(P(cat, run) = \frac{40}{430} \approx 0.0930)</li>
+<li>(P(bird, fly) = \frac{90}{430} \approx 0.2093)</li>
+<li>(P(bird, chirp) = \frac{70}{430} \approx 0.1628)</li>
 </ul>
 </li>
-<li><p><strong>计算PMI并应用熵归一化</strong>：</p>
+<li>
+<p><strong>计算PMI并应用熵归一化</strong>：</p>
 <ul>
-<li>(PMI(dog, bark) &#x3D; \log \frac{0.2326}{0.2326 \cdot 0.2326} &#x3D; \log \frac{0.2326}{0.0541} \approx \log 4.30 \approx 1.46)</li>
-<li>(PPMI(dog, bark) &#x3D; \max(1.46, 0) &#x3D; 1.46)</li>
+<li>(PMI(dog, bark) = \log \frac{0.2326}{0.2326 \cdot 0.2326} = \log \frac{0.2326}{0.0541} \approx \log 4.30 \approx 1.46)</li>
+<li>(PPMI(dog, bark) = \max(1.46, 0) = 1.46)</li>
 </ul>
 </li>
 </ol>
@@ -358,7 +410,8 @@
 <th>bird</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>bark</td>
 <td>1.46</td>
 <td>0</td>
@@ -388,9 +441,11 @@
 <td>0</td>
 <td>1.00</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>通过这种方式，我们对共现矩阵进行了熵归一化处理，减少了高频词对整体计算的影响，使得频率较高的元素对相似度计算的影响减小，从而更加准确地反映了词语之间的语义相关性。</p>
-<h3 id="扩展–-双线形对数回归"><a href="#扩展–-双线形对数回归" class="headerlink" title="扩展– 双线形对数回归"></a>扩展– 双线形对数回归</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613210222568.png" alt="image-20240613210222568"></p>
+<h3 id="扩展-双线形对数回归">扩展-- 双线形对数回归</h3>
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613210222568.png" alt="image-20240613210222568"></p>
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240613210204537.png" alt="image-20240613210204537"></p>
 
       
@@ -479,7 +534,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nlp-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">nlp 课程设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GloVE"><span class="toc-number">1.1.</span> <span class="toc-text">GloVE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0%E4%B8%8E%E5%BC%95%E8%A8%80%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">概述与引言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%E4%B8%8E%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="toc-number">1.1.2.</span> <span class="toc-text">基本思想与优势：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Related-work"><span class="toc-number">1.1.3.</span> <span class="toc-text">Related work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC%EF%BC%9A"><span class="toc-number">1.1.4.</span> <span class="toc-text">核心思想与数学推导：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E2%80%93-Example-of-Co-occurrence-Matrices"><span class="toc-number">1.1.5.</span> <span class="toc-text">扩展– Example of Co-occurrence Matrices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E2%80%93%E7%86%B5%E5%BD%92%E4%B8%80%E5%8C%96%E7%9A%84%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.6.</span> <span class="toc-text">扩展–熵归一化的具体操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E2%80%93-%E5%8F%8C%E7%BA%BF%E5%BD%A2%E5%AF%B9%E6%95%B0%E5%9B%9E%E5%BD%92"><span class="toc-number">1.1.7.</span> <span class="toc-text">扩展– 双线形对数回归</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">nlp 课程设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GloVE"><span class="toc-number">1.1.</span> <span class="toc-text">GloVE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0%E4%B8%8E%E5%BC%95%E8%A8%80%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">概述与引言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%E4%B8%8E%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="toc-number">1.1.2.</span> <span class="toc-text">基本思想与优势：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Related-work"><span class="toc-number">1.1.3.</span> <span class="toc-text">Related work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC%EF%BC%9A"><span class="toc-number">1.1.4.</span> <span class="toc-text">核心思想与数学推导：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95-Example-of-Co-occurrence-Matrices"><span class="toc-number">1.1.5.</span> <span class="toc-text">扩展-- Example of Co-occurrence Matrices</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E2%80%93%E7%86%B5%E5%BD%92%E4%B8%80%E5%8C%96%E7%9A%84%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.6.</span> <span class="toc-text">扩展–熵归一化的具体操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95-%E5%8F%8C%E7%BA%BF%E5%BD%A2%E5%AF%B9%E6%95%B0%E5%9B%9E%E5%BD%92"><span class="toc-number">1.1.7.</span> <span class="toc-text">扩展-- 双线形对数回归</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -693,7 +748,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">勤能补拙&lt;br&gt;&lt;br&gt;笔耕不辍，乐在其中&lt;br&gt;谢谢大家</div>
   	  	
     	</section>
     
