@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>my first post | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="第一章核心思想与数学推导：GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：  共现矩阵的构建：根据语料库构建一个共现矩阵 (X)，其中元素 (X_{ij}) 表示单词 (i) 和上下文单词 (j) 在特定上下文窗口内共同出现的次数。  近似关系的公式：提出词向量与共现矩阵之间的近似关系：$$w_i^T \tilde{w_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my first post">
+<meta property="og:url" content="http://example.com/2024/06/14/my-first-post/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第一章核心思想与数学推导：GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：  共现矩阵的构建：根据语料库构建一个共现矩阵 (X)，其中元素 (X_{ij}) 表示单词 (i) 和上下文单词 (j) 在特定上下文窗口内共同出现的次数。  近似关系的公式：提出词向量与共现矩阵之间的近似关系：$$w_i^T \tilde{w_">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-13T17:12:42.000Z">
+<meta property="article:modified_time" content="2024-06-13T17:14:40.410Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-my-first-post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/14/my-first-post/" class="article-date">
+  <time class="dt-published" datetime="2024-06-13T17:12:42.000Z" itemprop="datePublished">2024-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      my first post
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="核心思想与数学推导："><a href="#核心思想与数学推导：" class="headerlink" title="核心思想与数学推导："></a>核心思想与数学推导：</h3><p>GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：</p>
+<ol>
+<li><p><strong>共现矩阵的构建</strong>：根据语料库构建一个共现矩阵 (X)，其中元素 (X_{ij}) 表示单词 (i) 和上下文单词 (j) 在特定上下文窗口内共同出现的次数。</p>
+</li>
+<li><p><strong>近似关系的公式</strong>：提出词向量与共现矩阵之间的近似关系：<br>$$<br>w_i^T \tilde{w_j} + b_i + \tilde{b_j} &#x3D; \log(X_{ij})<br>$$<br>其中， (w_i) 和 (\tilde{w_j}) 是词向量， (b_i) 和 (\tilde{b_j}) 是偏置项。</p>
+</li>
+<li><p><strong>损失函数的构建</strong>：<br>$$<br>J &#x3D; \sum_{i,j&#x3D;1}^{V} f(X_{ij}) (w_i^T \tilde{w_j} + b_i + \tilde{b_j} - \log(X_{ij}))^2<br>$$<br>损失函数使用了一个加权函数 (f(X_{ij}))，其目的是对频繁共现的单词赋予更大的权重，同时避免权重过大。</p>
+</li>
+<li><p><strong>权重函数的形式</strong>：选择分段函数形式的权重函数：<br>$$<br>f(x) &#x3D; \begin{cases}<br>(x&#x2F;x_{max})^\alpha &amp; \text{if } x &lt; x_{max} \<br>1 &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
+</li>
+</ol>
+<p>引用 ：<a target="_blank" rel="noopener" href="https://www.fanyeong.com/2018/02/19/glove-in-detail/">https://www.fanyeong.com/2018/02/19/glove-in-detail/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/14/my-first-post/" data-id="clxdit9950001xejfaotr9tea" data-title="my first post" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/06/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/14/my-first-post/">my first post</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/14/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
