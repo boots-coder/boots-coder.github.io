@@ -286,6 +286,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://example.com/2024/06/14/my-first-post/",
+  owner: 'bootscoder',
+  repo: 'boots-coder.github.io',
+  oauth: {
+    client_id: 'Ov23ctpssYOD2SHJiaTf',
+    client_secret: '592a9d2fccdea8d5a82372b176e839340d4f0a3a',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
