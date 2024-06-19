@@ -650,21 +650,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>需要测试一下常见的数学公式 and md语法</p>
-<h3 id="核心思想与数学推导："><a href="#核心思想与数学推导：" class="headerlink" title="核心思想与数学推导："></a>核心思想与数学推导：</h3><p>Following that logic, our co-occurrence matrix will look like this:</p>
-<p><img src="https://www.baeldung.com/wp-content/ql-cache/quicklatex.com-379633f727a3768188076980b4e4a3a2_l3.svg" alt="Rendered by QuickLaTeX.com"></p>
-<p>From the table above, we can notice that the co-occurrence matrix is symmetric. It means that the value with row X and column Y will be the same as the value with row Y and column X. <strong>In general, we don’t need to keep all elements from the text corpus in the co-occurrence matrix but only those of interest.</strong><br>GloVe（Global Vectors for Word Representation）的数学推理部分主要包括以下几个步骤：</p>
-<ol>
-<li><p><strong>共现矩阵的构建</strong>：根据语料库构建一个共现矩阵 (X)，其中元素 (X_{ij}) 表示单词 (i) 和上下文单词 (j) 在特定上下文窗口内共同出现的次数。</p>
-</li>
-<li><p><strong>近似关系的公式</strong>：提出词向量与共现矩阵之间的近似关系：<br>$$<br>w_i^T \tilde{w_j} + b_i + \tilde{b_j} &#x3D; \log(X_{ij})<br>$$<br>其中， (w_i) 和 (\tilde{w_j}) 是词向量， (b_i) 和 (\tilde{b_j}) 是偏置项。</p>
-</li>
-<li><p><strong>损失函数的构建</strong>：<br>$$<br>J &#x3D; \sum_{i,j&#x3D;1}^{V} f(X_{ij}) (w_i^T \tilde{w_j} + b_i + \tilde{b_j} - \log(X_{ij}))^2<br>$$<br>损失函数使用了一个加权函数 (f(X_{ij}))，其目的是对频繁共现的单词赋予更大的权重，同时避免权重过大。</p>
-</li>
-<li><p><strong>权重函数的形式</strong>：选择分段函数形式的权重函数：<br>$$<br>f(x) &#x3D; \begin{cases}<br>(x&#x2F;x_{max})^\alpha &amp; \text{if } x &lt; x_{max} \<br>1 &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
-</li>
-</ol>
-<p>引用 ：<a target="_blank" rel="noopener" href="https://www.fanyeong.com/2018/02/19/glove-in-detail/">https://www.fanyeong.com/2018/02/19/glove-in-detail/</a></p>
-
+        
+          <a class="article-more-a" href="/2024/06/14/my-first-post/#more">more >></a>
+        
       
 
       
@@ -741,19 +729,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+        
+          <a class="article-more-a" href="/2024/06/14/hello-world/#more">more >></a>
+        
       
 
       
