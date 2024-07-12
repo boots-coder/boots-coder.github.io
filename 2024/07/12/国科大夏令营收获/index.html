@@ -16,7 +16,7 @@
 <meta property="og:description" content="从7.7 到 7.12 见到了很多大佬。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-12T14:47:20.000Z">
-<meta property="article:modified_time" content="2024-07-12T15:59:29.035Z">
+<meta property="article:modified_time" content="2024-07-12T16:08:01.589Z">
 <meta property="article:tag" content="日记">
 <meta name="twitter:card" content="summary">
   
@@ -177,11 +177,80 @@
 <p>我当时 一听到算法头就有点大， 因为我的算法基础很薄弱， 目前来看仅仅会一些基本的深度学习的知识， 并且借助ai 来解决一些基本的问题，目前最大的思想就是借助ai 将问题进行拆分，并且总结子问题的算法。</p>
 <p>所以当时我脑子中就只有 一个DBSCAN 算法（是以密度为基础的聚类）</p>
 <p>但是他又问我具体是什么ai 方面的算法，我就答不出来了</p>
-<p>后面younglar 和我分析 应该是他想知道我具体的打算– 就是 cmbline ai+ 小卫星的具体方案；</p>
+<p>后面younglar 和我分析 应该是他想知道我具体的打算– 就是 combline ai+ 小卫星的具体方案；</p>
 <p>其实今天张永和总下面的王老师给出了一个非常非常高水准的“答案”；</p>
 <p>在他的介绍中，我们了解到了ai 在路径规划，编队方案设计， 角度探测的具体的应用，并且他介绍的国重实验室项目， 空间引力波探测的工作震撼到我， 也让我认识到一个数学建模问题的实际抽象过程；他提到了一个仿真后的数据，和物理实验家得到的理论引力波的数据， 将来会举办一个比赛， 不同的队伍将会使用数据挖掘的不同方法来得到最接近理论值的引力波的数据， 并且公开方案，经过专家组评估后选定最合适的方案</p>
 <p>加油 younglar， 加油 轩总</p>
 <p>😴</p>
+<p>plus：</p>
+<h3 id="示例：卫星发射过程中的火箭发动机故障诊断"><a href="#示例：卫星发射过程中的火箭发动机故障诊断" class="headerlink" title="示例：卫星发射过程中的火箭发动机故障诊断"></a>示例：卫星发射过程中的火箭发动机故障诊断</h3><h4 id="问题背景："><a href="#问题背景：" class="headerlink" title="问题背景："></a>问题背景：</h4><p>在卫星发射过程中，火箭发动机的正常运行至关重要。然而，由于复杂的工程和环境因素，发动机可能会出现故障。为了提高故障诊断的效率和准确性，我们可以使用决策树算法来自动识别和分类不同类型的发动机故障。</p>
+<h4 id="数据准备："><a href="#数据准备：" class="headerlink" title="数据准备："></a>数据准备：</h4><p>假设我们有一个数据集，记录了多个发射事件中的火箭发动机传感器数据。每个样本包含多个特征，如燃料压力、燃料流量、温度、振动强度等，以及一个标签（正常&#x2F;故障类型）。</p>
+<p>样本数据示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>燃料压力 (MPa)</th>
+<th>燃料流量 (L&#x2F;s)</th>
+<th>温度 (°C)</th>
+<th>振动强度 (g)</th>
+<th>故障类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20</td>
+<td>50</td>
+<td>150</td>
+<td>0.5</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>25</td>
+<td>45</td>
+<td>160</td>
+<td>0.7</td>
+<td>故障A</td>
+</tr>
+<tr>
+<td>18</td>
+<td>55</td>
+<td>145</td>
+<td>0.6</td>
+<td>故障B</td>
+</tr>
+<tr>
+<td>22</td>
+<td>50</td>
+<td>155</td>
+<td>0.4</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody></table>
+<h4 id="决策树模型的构建和训练："><a href="#决策树模型的构建和训练：" class="headerlink" title="决策树模型的构建和训练："></a>决策树模型的构建和训练：</h4><ol>
+<li><p><strong>数据预处理</strong>：</p>
+<ul>
+<li>处理缺失值和异常值。</li>
+<li>归一化或标准化特征数据。</li>
+</ul>
+</li>
+<li><p><strong>训练决策树模型</strong>：<br>使用 <code>scikit-learn</code> 库中的 <code>DecisionTreeClassifier</code> 进行模型训练。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> accuracy_score, classification_report</span><br><span class="line"></span><br><span class="line"><span class="comment"># 假设数据已加载到 DataFrame df 中</span></span><br><span class="line">X = df.drop(<span class="string">&#x27;故障类型&#x27;</span>, axis=<span class="number">1</span>)  <span class="comment"># 特征</span></span><br><span class="line">y = df[<span class="string">&#x27;故障类型&#x27;</span>]  <span class="comment"># 标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分训练集和测试集</span></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.3</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并训练决策树模型</span></span><br><span class="line">clf = DecisionTreeClassifier()</span><br><span class="line">clf.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预测并评估模型</span></span><br><span class="line">y_pred = clf.predict(X_test)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;准确率:&quot;</span>, accuracy_score(y_test, y_pred))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;分类报告:\n&quot;</span>, classification_report(y_test, y_pred))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>模型评估和优化</strong>：</p>
+<ul>
+<li>使用交叉验证评估模型性能。</li>
+<li>调整模型参数（如树的最大深度、最小样本分割数等），优化模型。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"></span><br><span class="line">param_grid = &#123;<span class="string">&#x27;max_depth&#x27;</span>: [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">10</span>], <span class="string">&#x27;min_samples_split&#x27;</span>: [<span class="number">2</span>, <span class="number">5</span>, <span class="number">10</span>]&#125;</span><br><span class="line">grid_search = GridSearchCV(clf, param_grid, cv=<span class="number">5</span>, scoring=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">grid_search.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;最佳参数:&quot;</span>, grid_search.best_params_)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="模型应用："><a href="#模型应用：" class="headerlink" title="模型应用："></a>模型应用：</h4><p>一旦模型训练和优化完成，可以将其部署在实时监控系统中。当新的传感器数据到达时，模型可以实时预测发动机状态，及时发现和分类故障，从而采取相应的措施，确保发射过程的安全。</p>
+<h3 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h3><p>通过这个实例，可以看到决策树模型在卫星发射过程中火箭发动机故障诊断中的具体应用。决策树算法简单易用，且具有较强的解释性，非常适合此类分类任务。</p>
 
       
 
@@ -269,7 +338,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E5%8D%AB%E6%98%9F%E5%8F%91%E5%B0%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E7%81%AB%E7%AE%AD%E5%8F%91%E5%8A%A8%E6%9C%BA%E6%95%85%E9%9A%9C%E8%AF%8A%E6%96%AD"><span class="toc-number">1.</span> <span class="toc-text">示例：卫星发射过程中的火箭发动机故障诊断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">问题背景：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">数据准备：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%9E%84%E5%BB%BA%E5%92%8C%E8%AE%AD%E7%BB%83%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">决策树模型的构建和训练：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">模型应用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">结论：</span></a></li></ol>
                     </div>
                 </span>
             </div>
