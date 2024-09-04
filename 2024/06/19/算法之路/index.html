@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://www.hello-algo.com/chapter_computational_complexity/time_complexity.assets/asymptotic_upper_bound.png">
 <meta property="og:image" content="https://www.hello-algo.com/chapter_computational_complexity/space_complexity.assets/space_types.png">
 <meta property="article:published_time" content="2024-06-18T16:11:14.000Z">
-<meta property="article:modified_time" content="2024-07-17T16:18:47.026Z">
+<meta property="article:modified_time" content="2024-09-04T09:56:04.480Z">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
@@ -397,8 +397,33 @@
 <p>本质上看，“取反”操作实际上是求到 1111 的补数（因为恒有 <code>原码 + 反码 = 1111</code>）；而在反码基础上再加 1 得到的补码，就是到 10000 的补数。</p>
 <p>上述以 𝑛&#x3D;4 为例，其可被推广至任意位数的二进制数。</p>
 <h1 id="4-数组与链表"><a href="#4-数组与链表" class="headerlink" title="4 数组与链表"></a>4 数组与链表</h1><h2 id="数组-4-1"><a href="#数组-4-1" class="headerlink" title="数组 4.1"></a>数组 4.1</h2><ol>
+<li>什么是数组？线性数据结构，用来存储相同类型数据在连续空间</li>
 <li>数组的特点，（两个，线性 和连续与否）</li>
 <li>初始化数组的两种操作 java</li>
+</ol>
+<p>int shuzu &#x3D; new int[5];</p>
+<ol start="4">
+<li>索引的本质是什么？</li>
+<li>如何随机访问元素？</li>
+<li>如何插入元素</li>
+<li>如何删除元素</li>
+<li>删除元素完成后，我们是否需要特意去修改原先末尾的元素？</li>
+<li>数组的插入和删除操作有什么缺点</li>
+<li>遍历数组的两种方式分别是什么？</li>
+<li>如何在数组中找到特定的元素</li>
+<li>如何进行数组扩容？</li>
+<li>数组的优点和局限性</li>
+<li>数组的应用有哪些？</li>
+</ol>
+<h2 id="链表-4-2"><a href="#链表-4-2" class="headerlink" title="链表 4.2"></a>链表 4.2</h2><ol>
+<li>对比数组最显著的优势是什么情况下体现的 </li>
+<li>链表是什么</li>
+<li>节点之间通过什么链接</li>
+<li>如何使用java 创建一个链表类</li>
+<li>如何初始化一个链表</li>
+<li>一个链表通常如何表示？（使用什么当作代称？）</li>
+<li>链表如何删除节点， 删除n0后面的第一个节点？ 这样是否会多余一个节点的内存</li>
+<li>如何访问节点？</li>
 </ol>
 
       
@@ -500,7 +525,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">算法学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1hello-%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">1hello 算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">3.</span> <span class="toc-text">2算法复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%92%8C%E8%BF%AD%E4%BB%A3-2-2"><span class="toc-number">3.1.</span> <span class="toc-text">递归和迭代 2.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-2-3"><span class="toc-number">3.2.</span> <span class="toc-text">时间复杂度 2.3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-2-4"><span class="toc-number">3.3.</span> <span class="toc-text">空间复杂度 2.4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-2-5"><span class="toc-number">3.4.</span> <span class="toc-text">小结 2.5</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">4.</span> <span class="toc-text">3 数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB3-1"><span class="toc-number">4.1.</span> <span class="toc-text">数据结构分类3.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-3-2"><span class="toc-number">4.2.</span> <span class="toc-text">基本数据类型 3.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%BC%96%E7%A0%81-3-3"><span class="toc-number">4.3.</span> <span class="toc-text">数字编码 3.3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81-3-4"><span class="toc-number">4.4.</span> <span class="toc-text">字符编码 3.4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-3-5"><span class="toc-number">4.5.</span> <span class="toc-text">小结 3.5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE%C2%B6"><span class="toc-number">4.5.1.</span> <span class="toc-text">1.  重点回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Q-A%C2%B6"><span class="toc-number">4.5.2.</span> <span class="toc-text">2.  Q &amp; A</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8"><span class="toc-number">5.</span> <span class="toc-text">4 数组与链表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-4-1"><span class="toc-number">5.1.</span> <span class="toc-text">数组 4.1</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">算法学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1hello-%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">1hello 算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">3.</span> <span class="toc-text">2算法复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%92%8C%E8%BF%AD%E4%BB%A3-2-2"><span class="toc-number">3.1.</span> <span class="toc-text">递归和迭代 2.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-2-3"><span class="toc-number">3.2.</span> <span class="toc-text">时间复杂度 2.3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-2-4"><span class="toc-number">3.3.</span> <span class="toc-text">空间复杂度 2.4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-2-5"><span class="toc-number">3.4.</span> <span class="toc-text">小结 2.5</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">4.</span> <span class="toc-text">3 数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB3-1"><span class="toc-number">4.1.</span> <span class="toc-text">数据结构分类3.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-3-2"><span class="toc-number">4.2.</span> <span class="toc-text">基本数据类型 3.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%BC%96%E7%A0%81-3-3"><span class="toc-number">4.3.</span> <span class="toc-text">数字编码 3.3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81-3-4"><span class="toc-number">4.4.</span> <span class="toc-text">字符编码 3.4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-3-5"><span class="toc-number">4.5.</span> <span class="toc-text">小结 3.5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%87%8D%E7%82%B9%E5%9B%9E%E9%A1%BE%C2%B6"><span class="toc-number">4.5.1.</span> <span class="toc-text">1.  重点回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Q-A%C2%B6"><span class="toc-number">4.5.2.</span> <span class="toc-text">2.  Q &amp; A</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8"><span class="toc-number">5.</span> <span class="toc-text">4 数组与链表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-4-1"><span class="toc-number">5.1.</span> <span class="toc-text">数组 4.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8-4-2"><span class="toc-number">5.2.</span> <span class="toc-text">链表 4.2</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
