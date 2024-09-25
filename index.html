@@ -229,60 +229,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="GNN"><a href="#GNN" class="headerlink" title="GNN"></a>GNN</h1><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924122803878.png" alt="image-20240924122803878"></p>
-<ul>
-<li>什么是图</li>
-<li>什么是network</li>
-<li>structure - node 和 edge 的feature是什么</li>
-<li>GNN 可以做什么事情</li>
-</ul>
-<p>为什么我们使用GNN？</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924121700675.png" alt="image-20240924121700675"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924121830686.png" alt="image-20240924121830686"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924121926391.png" alt="image-20240924121926391"></p>
-<p>不单单训练一个简单的 classifier </p>
-<p>but 添加 object 之间的关系</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924122122765.png" alt="image-20240924122122765"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924122241044.png" alt="image-20240924122241044"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924122334084.png" alt="image-20240924122334084"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924122502218.png" alt="image-20240924122502218"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924122527863.png" alt="image-20240924122527863"></p>
-<p>类比一下CNN 中间的步骤 - 抽象出来成为一个方法</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924123201318.png" alt="image-20240924123201318"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924123411798.png" alt="image-20240924123411798"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924164859689.png" alt="image-20240924164859689"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924164929359.png" alt="image-20240924164929359"></p>
-<p> <img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924165243017.png" alt="image-20240924165243017"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924165325418.png" alt="image-20240924165325418"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924165358257.png" alt="image-20240924165358257"></p>
-<p>这里没听懂 – 理解了度的概念后 懂了</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924165759198.png" alt="image-20240924165759198"></p>
-<h2 id="Graph-SAGE"><a href="#Graph-SAGE" class="headerlink" title="Graph SAGE"></a>Graph SAGE</h2><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924170336599.png" alt="image-20240924170336599"></p>
-<p>使用LSTM - 忽略掉顺序的 影响– performance ⬇️</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924170343850.png" alt="image-20240924170343850"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924170508086.png" alt="image-20240924170508086"></p>
-<h2 id="GAT—-目前比较常用的方法"><a href="#GAT—-目前比较常用的方法" class="headerlink" title="GAT— 目前比较常用的方法"></a>GAT— 目前比较常用的方法</h2><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924171000195.png" alt="image-20240924171000195"></p>
-<p>对每一个节点的邻居做Attention - 得到对于x，y 的重要性</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924171345870.png" alt="image-20240924171345870"></p>
-<h2 id="PArt2-原理"><a href="#PArt2-原理" class="headerlink" title="PArt2 原理"></a>PArt2 原理</h2><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924171927438.png" alt="image-20240924171927438"></p>
-<p>FOurier transform - 傅立叶变换</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924172220995.png" alt="image-20240924172220995"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924172243523.png" alt="image-20240924172243523"></p>
-<p> <img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924172354612.png" alt="image-20240924172354612"></p>
-<p>![](&#x2F;Users&#x2F;bootscoder&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240924172457762.png)</p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924172719327.png" alt="image-20240924172719327"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924172814830.png" alt="image-20240924172814830"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924173047368.png" alt="image-20240924173047368"></p>
-<p>Symmetric</p>
-<blockquote>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924173320442.png" alt="image-20240924173320442"></p>
-</blockquote>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924173441747.png" alt="image-20240924173441747"></p>
-<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240924173550497.png" alt="image-20240924173550497"></p>
-<p>Discrete time - 离散时间</p>
-<p>v成</p>
-<p>spectral</p>
-
+        <h1 id="GNN"><a href="#GNN" class="headerlink" title="GNN"></a>GNN</h1><p>本文是跟着李宏毅老师的助教学习GNN的笔记</p>
+        
+          <a class="article-more-a" href="/2024/09/24/GNN/#more">more >></a>
+        
       
 
       
