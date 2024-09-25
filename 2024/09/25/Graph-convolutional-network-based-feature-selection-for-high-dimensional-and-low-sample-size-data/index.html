@@ -6,16 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://boots-coder.github.io">
-  <title>Tag: 面试 | coderboots</title>
+  <title>Graph convolutional network-based feature selection for  high-dimensional and low-sample size data | coderboots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this is bootscoders blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="coderboots">
-<meta property="og:url" content="https://boots-coder.github.io/tags/%E9%9D%A2%E8%AF%95/index.html">
+  <meta name="description" content="Graph convolutional network-based feature selection for  high-dimensional and low-sample size data（卷积神经网络对高低纬特征的选择）摘要在高纬度样本空间- 特征提取- 降低了loss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Graph convolutional network-based feature selection for  high-dimensional and low-sample size data">
+<meta property="og:url" content="https://boots-coder.github.io/2024/09/25/Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data/index.html">
 <meta property="og:site_name" content="coderboots">
-<meta property="og:description" content="this is bootscoders blog">
+<meta property="og:description" content="Graph convolutional network-based feature selection for  high-dimensional and low-sample size data（卷积神经网络对高低纬特征的选择）摘要在高纬度样本空间- 特征提取- 降低了loss">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918103507714.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918104013866.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925184626246.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925210003017.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925210304118.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925194854114.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925202711114.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925204021760.png">
+<meta property="article:published_time" content="2024-09-25T13:08:35.000Z">
+<meta property="article:modified_time" content="2024-09-25T13:09:30.659Z">
+<meta property="article:tag" content="科研">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918103507714.png">
   
     <link rel="alternative" href="/atom.xml" title="coderboots" type="application/atom+xml">
   
@@ -143,61 +155,353 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/07/10/%E5%A4%8F%E4%BB%A4%E8%90%A5%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="archive-article-date">
-  	<time datetime="2024-07-09T16:11:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-07-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/07/10/%E5%A4%8F%E4%BB%A4%E8%90%A5%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">中科大夏令营面试准备</a>
+    <h1 class="article-title" itemprop="name">
+      Graph convolutional network-based feature selection for  high-dimensional and low-sample size data
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2024/09/25/Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data/" class="archive-article-date">
+  	<time datetime="2024-09-25T13:08:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data（卷积神经网络对高低纬特征的选择）"><a href="#Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data（卷积神经网络对高低纬特征的选择）" class="headerlink" title="Graph convolutional network-based feature selection for  high-dimensional and low-sample size data（卷积神经网络对高低纬特征的选择）"></a>Graph convolutional network-based feature selection for  high-dimensional and low-sample size data（卷积神经网络对高低纬特征的选择）</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>在高纬度样本空间- 特征提取- 降低了loss</p>
+<span id="more"></span>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>具体的实际应用领域：biological data</p>
+<p>困境：huge amount of features (e.g.  105), while the number of samples is very small</p>
+<p>future selection :filtering, wrapped, and embedded methods – 15</p>
+<h2 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h2><p>以下是关于文中提到的特征选择方法的整理，列出了每种方法的优劣和相关的作者与年份：</p>
+<table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+<th><strong>优点</strong></th>
+<th><strong>缺点</strong></th>
+<th><strong>作者 &amp; 年份</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ANOVA F 检验</strong></td>
+<td>- 计算成本低<br>- 在一些 HDLSS 数据集上表现良好</td>
+<td>- 假设特征与输出之间是线性关系，无法捕捉复杂的非线性关系</td>
+<td>Stahle et al., 1989</td>
+</tr>
+<tr>
+<td><strong>Student’s t 检验</strong></td>
+<td>- 可用于简单的特征选择</td>
+<td>- 同样假设线性关系，无法处理非线性特征</td>
+<td>Owen, 1965</td>
+</tr>
+<tr>
+<td><strong>皮尔逊相关性检验</strong></td>
+<td>- 用于衡量线性相关性</td>
+<td>- 无法处理非线性特征</td>
+<td>Meng et al., 1992</td>
+</tr>
+<tr>
+<td><strong>卡方检验</strong></td>
+<td>- 常用于分类数据的特征选择</td>
+<td>- 只适用于分类变量，不能用于连续变量</td>
+<td>Plackett, 1983</td>
+</tr>
+<tr>
+<td><strong>Kolmogorov-Smirnov 检验</strong></td>
+<td>- 常用于分布检验</td>
+<td>- 对于特征选择来说局限较大</td>
+<td>Daniel, 1990</td>
+</tr>
+<tr>
+<td><strong>Lasso（L1 正则化）</strong></td>
+<td>- 自动进行特征选择，产生稀疏解<br>- 适合 HDLSS 数据<br>- 可与 LR 等多种分类器结合</td>
+<td>- 假设线性关系，无法捕捉复杂的非线性特征</td>
+<td>Tibshirani, 1996</td>
+</tr>
+<tr>
+<td><strong>HSIC Lasso（基于核的 Lasso）</strong></td>
+<td>- 处理 HDLSS 数据上的非线性特征选择<br>- 利用经验 HSIC 查找非冗余特征<br>- 优于 Lasso 等线性方法</td>
+<td>- 计算较为复杂，需进行 HSIC 的计算</td>
+<td>Yamada et al., 2014, 2018</td>
+</tr>
+<tr>
+<td><strong>随机森林（RF）</strong></td>
+<td>- 能处理非线性输入输出关系<br>- 通过增加叶节点纯度来进行特征选择</td>
+<td>- 需要大样本进行训练，因此在 HDLSS 数据上表现不佳</td>
+<td>Breiman, 2001</td>
+</tr>
+<tr>
+<td><strong>梯度提升特征选择（GBFS）</strong></td>
+<td>- 能通过树的构建过程进行特征选择</td>
+<td>- 需要大样本进行训练，在 HDLSS 数据上不适用</td>
+<td>Xu et al., 2014</td>
+</tr>
+<tr>
+<td><strong>DNP（动态神经过程）</strong></td>
+<td>- 针对 HDLSS 数据设计<br>- 使用 MLP 结合 dropout 解决过拟合问题<br>- 在 HDLSS 数据上优于 Lasso 和 GBFS</td>
+<td>- 仅使用 MLP，无法捕捉样本间复杂的潜在关系</td>
+<td>Liu et al., 2017</td>
+</tr>
+<tr>
+<td><strong>递归特征消除（RFE）</strong></td>
+<td>- 基于特征重要性递归删除不相关特征<br>- 能结合分类器的特征重要性进行选择</td>
+<td>- 计算代价高，在 HDLSS 数据上变得不可行</td>
+<td>Guyon et al., 2002</td>
+</tr>
+<tr>
+<td><strong>序列特征选择（SFS）</strong></td>
+<td>- 贪婪算法，增加或删除特征进行选择<br>- 基于分类器的交叉验证得分选择特征</td>
+<td>- 计算代价高，尤其是对于大量特征时效率低下</td>
+<td>Aha and Bankert, 1995</td>
+</tr>
+<tr>
+<td><strong>深度学习特征选择方法</strong></td>
+<td>- 专门为 HDLSS 设计的一些深度学习方法（如 DNP）可以处理小样本高维数据<br>- 结合神经网络和秩距离相关度量进行特征选择</td>
+<td>- 计算复杂，需大量计算资源<br>- 某些深度学习方法（如常规 DNN）对大样本依赖较大，在 HDLSS 数据上效果较差</td>
+<td>Liu et al., 2017, Li et al., 2022</td>
+</tr>
+</tbody></table>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li><strong>线性方法</strong>（如 ANOVA F 检验、Lasso）计算简单，但难以捕捉非线性关系。</li>
+<li><strong>非线性方法</strong>（如 HSIC Lasso、随机森林、GBFS）可以处理复杂特征，但通常需要大样本支持，不适合 HDLSS 数据。</li>
+<li><strong>深度学习方法</strong>（如 DNP）专为 HDLSS 数据设计，能有效减少过拟合，但计算成本较高，且在处理复杂的样本关系时仍有不足。</li>
+<li><strong>递归和序列特征选择方法</strong>（RFE、SFS）能够动态地调整特征选择，但计算效率较低，不适合处理高维数据。</li>
+</ul>
+<h2 id="meterials-and-methods"><a href="#meterials-and-methods" class="headerlink" title="meterials and methods"></a>meterials and methods</h2><p> GRACES – &#x3D;&#x3D;寻找最优特征&#x3D;&#x3D;，使得优化损失最小</p>
+<p>如何寻找的？</p>
+<p>这样找为什么就是最小的？</p>
+<p>5 parts:</p>
+<p>feature initialization, graph construction, neural network, multiple dropouts, and gradient computation</p>
+<h3 id="feature-initialization"><a href="#feature-initialization" class="headerlink" title="feature initialization  :"></a>feature initialization  :</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918103507714.png" alt="image-20240918103507714"></p>
+<ul>
+<li>为什么要引入偏置？？</li>
+<li>为什么引入1 ？其他值是否可行</li>
+</ul>
+<blockquote>
+<p>给训练过程设置锚点：由于该特征的值对所有样本都是相同的，因此它在最初不会对不同样本的区别产生太大影响</p>
+<p>可以， 1好处理</p>
+</blockquote>
+<h3 id="graph-construction"><a href="#graph-construction" class="headerlink" title="graph construction :"></a>graph construction :</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918104013866.png" alt="image-20240918104013866"></p>
+<ul>
+<li>这里使用余弦相似度连接起来以后， 有什么具体的含义？<ul>
+<li>使用的 数据集的结构是什么？ 使用图表示后，节点表示什么东西</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://chatgpt.com/share/66f3b633-80b8-8003-9669-1aa291fd16dc">GLI_85 数据集展示</a></p>
+<p><strong>节点数量</strong>：</p>
+<p>22,283 个节点，每个节点代表一个基因。</p>
+<p>85个节点， 然后每一个节点有22283 个特征，这样连接相似节点后可以得到一个图</p>
+</blockquote>
+<h3 id="neural-network"><a href="#neural-network" class="headerlink" title="neural network"></a>neural network</h3><p>三层：线性输入- &gt; GCN -&gt; 线性输出</p>
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925184626246.png" alt="image-20240925184626246"></p>
+<ol>
+<li><p>可学习的权重矩阵 的初始值是多少？</p>
+</li>
+<li><p>节点的个数不会减少，但是每个节点的特征信息会更新，具体是如何更新的，大概率增加还是减少?</p>
+</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>它们初始时一般是随机值（基于上述的初始化方式），并在训练过程中通过反向传播算法逐步调整，最终找到合适的权重值。</p>
+</li>
+<li><p><strong>特征的更新</strong>：每一轮更新后，节点的特征会是原特征与邻居节点特征的融合。特征向量的维度不会减少，但其值会发生变化。这种变化可以使节点的特征更加全面，包含更多邻居的语义信息。</p>
+<p><strong>特征向量维度的变化</strong>：在特定的层次中，节点的特征向量维度可以由网络结构决定（比如权重矩阵 W1W_1W1 和 W2W_2W2 的维度会影响特征维度的变化），但不会自动减少维度，除非网络设计中有降维层或通过某种方式进行特征选择。</p>
+</li>
+</ol>
+<p>综上，节点的个数保持不变，但每个节点的特征信息会根据邻居的特征进行更新。这种更新通常使得节点特征变得更加丰富，但是否信息增加或减少取决于邻居节点的数量以及所采用的特征聚合策略。如果邻居节点提供的有用信息较多，特征信息可能会增加；但如果邻居信息中噪声较多，可能有效信息会相对减少。</p>
+</blockquote>
+<h3 id="multiple-dropouts"><a href="#multiple-dropouts" class="headerlink" title="multiple dropouts"></a>multiple dropouts</h3><p>多重dropput - 减少方差，降低过拟合概率（我们随机移除 GCN 层的隐藏神经元和输出层的神经元，操作次数为超参数 PPP 和 mmm 的乘积（GRACES中的超参数））</p>
+<h3 id="gradient-computation"><a href="#gradient-computation" class="headerlink" title="gradient computation"></a>gradient computation</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925210003017.png" alt="image-20240925210003017"></p>
+<blockquote>
+<p>通过计算梯度矩阵后，可以基于G的列模大小选择下一个特征，公式如(6)</p>
+<p>引入高斯噪声</p>
+</blockquote>
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925210304118.png" alt="image-20240925210304118"></p>
+<blockquote>
+<p>惩罚因子，减少拟合；</p>
+<p>ANOVA F检验被选择的原因有三点：1) 计算高效；2) 在 HDLSS 数据上表现良好；3) 能有效防止过拟合。其它统计测试（如t检验，皮尔逊相关性测试等）也可以类似地应用，更多复杂的方法如HSIC Lasso或DNP也可以被使用，但需要更多的计算资源。</p>
+</blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Algorithm 1 GRACES:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A[开始] --&gt; B[输入特征矩阵 X、标签向量 y、超参数]</span><br><span class="line">    B --&gt; C[引入偏置特征并索引为0]</span><br><span class="line">    C --&gt; D[&quot;初始化 S = &#123;0&#125;&quot;]</span><br><span class="line">    D --&gt; E&#123;&quot;是否 |S| ≤ K+1?&quot;&#125;</span><br><span class="line">    E -- 是 --&gt; F[基于 S 构建余弦相似度图，阈值 δ]</span><br><span class="line">    F --&gt; G[训练包含输入层、GCN层和输出层的神经网络，学习率 l]</span><br><span class="line">    G --&gt; H[在 GCN 和输出层进行 m 次 Dropout，Dropout 概率为 P]</span><br><span class="line">    H --&gt; I[将方差为 σ² 的高斯噪声引入 GCN 层]</span><br><span class="line">    I --&gt; J[计算输入权重矩阵的平均梯度]</span><br><span class="line">    J --&gt; K[通过 ANOVA F检验修正特征分数，修正率 α]</span><br><span class="line">    K --&gt; L[&quot;根据公式(8)更新选定的特征集 S&quot;]</span><br><span class="line">    L --&gt; E</span><br><span class="line">    E -- 否 --&gt; M[&quot;移除偏置特征 (S 中的第一个元素)&quot;]</span><br><span class="line">    M --&gt; N[返回选定的特征集 S]</span><br><span class="line">    N --&gt; O[结束]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>公式8:<img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925194854114.png" alt="image-20240925194854114"></p>
+</blockquote>
+<h2 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4 Experiments"></a>4 Experiments</h2><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925202711114.png" alt="image-20240925202711114"></p>
+<blockquote>
+<p><strong>总结</strong>： GRACES 在合成数据集上，与其他方法相比表现较为一致，尤其在低难度和中等难度的数据集上具有较好的特征选择能力和 AUROC 表现。然而，在高难度数据集上，它的表现相对较为不稳定，与其他方法相比稍逊一筹。</p>
+</blockquote>
+<p>结果如图2所示。显然，GRACES 在所有三种模式下表现出色。值得注意的是，GRACES 能够捕捉到更多正确的重要特征（即 GRACES 的校正率显著优于其他方法），这导致了更好的测试 AUROC。此外，GRACES 在总特征数量增加时的表现也相当稳定（尤其是在简单和中等模式下）。相比之下，其他方法的 AUROC（除了 DNP 之外）波动很大。在简单模式下，大多数方法（如 ANOVA F 检验、LR Lasso 和 CancelOut）实现了相当的性能（即 AUROC &gt; 90%），尽管它们的校正率远低于 GRACES。在困难模式下，这些方法则变得无效。</p>
+<p>作者在实验部分展现了更多的发论文trick：</p>
+<ol>
+<li>我们随机将每个数据集划分为 20% 训练集、50% 验证集和 30% 测试集，并进行了 20 次重复实验。我们选择了这种&#x3D;&#x3D;低训练比例是因为高训练比例会导致每种方法都能达到极高的表现&#x3D;&#x3D;（这一点可以在 DNP 论文中看到；Liu et al. 2017）。</li>
+<li>统计显著性- 优越</li>
+</ol>
+<blockquote>
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925204021760.png" alt="image-20240925204021760"></p>
+</blockquote>
+<h3 id="discussion"><a href="#discussion" class="headerlink" title="discussion"></a>discussion</h3><p>我们进行了消融研究，以证明这两种减少过拟合技术的有效性。</p>
+<ul>
+<li>引入高斯噪声和 F 校正</li>
+</ul>
+<p>GRACES 只适用于 HDLSS 数据，无法处理大样本量的常规特征选择任务。</p>
+<ul>
+<li>计算效率低： ANOVA F是最高的</li>
+</ul>
+<blockquote>
+<p>后续可以改进， 计算效率低问题</p>
+</blockquote>
+<h3 id="conclusion"><a href="#conclusion" class="headerlink" title="conclusion"></a>conclusion</h3><p><strong>GRACES 方法的成功</strong>：</p>
+<ul>
+<li>GRACES 在 HDLSS 数据集上表现出色，通过结合 GCN 和多种减少过拟合的技术（如 dropout、高斯噪声和 F 校正），相比传统方法具有显著优势。</li>
+</ul>
+<p><strong>应用前景</strong>：</p>
+<ul>
+<li>GRACES 可以应用于其他存在 HDLSS 问题的生物数据集，展示了该方法在不同类型数据集上的普适性。</li>
+</ul>
+<p><strong>未来方向</strong>：</p>
+<ul>
+<li>文中建议，未来可以研究更复杂的网络架构，如超图卷积网络，这种架构可以捕捉样本间的高阶关联，可能会提供更精确的样本表示。此外，考虑使用更多的减少过拟合技术（如归一化）可以进一步提升 GRACES 的性能。</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>a cup of coofee<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">科研</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2024/09/24/GNN/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data%EF%BC%88%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AF%B9%E9%AB%98%E4%BD%8E%E7%BA%AC%E7%89%B9%E5%BE%81%E7%9A%84%E9%80%89%E6%8B%A9%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Graph convolutional network-based feature selection for  high-dimensional and low-sample size data（卷积神经网络对高低纬特征的选择）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-work"><span class="toc-number">1.3.</span> <span class="toc-text">Related work</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meterials-and-methods"><span class="toc-number">1.4.</span> <span class="toc-text">meterials and methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#feature-initialization"><span class="toc-number">1.4.1.</span> <span class="toc-text">feature initialization  :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#graph-construction"><span class="toc-number">1.4.2.</span> <span class="toc-text">graph construction :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#neural-network"><span class="toc-number">1.4.3.</span> <span class="toc-text">neural network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multiple-dropouts"><span class="toc-number">1.4.4.</span> <span class="toc-text">multiple dropouts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gradient-computation"><span class="toc-number">1.4.5.</span> <span class="toc-text">gradient computation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Experiments"><span class="toc-number">1.5.</span> <span class="toc-text">4 Experiments</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#discussion"><span class="toc-number">1.5.1.</span> <span class="toc-text">discussion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#conclusion"><span class="toc-number">1.5.2.</span> <span class="toc-text">conclusion</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
 
+  
+
+  
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+
+	
+		<section id="comments" class="comments">
+		  <style>
+			.utterances{max-width: 100%;}
+		  </style>
+			<script src="https://utteranc.es/client.js"
+					repo="boots-coder/boots-coder.github.io"
+					issue-term="pathname"
+					theme="github-light"
+					crossorigin="anonymous"
+					async>
+			</script>
+	  </section>
+	
+
+<!-- utteranc评论》 -->
 
           </div>
         </div>
@@ -219,9 +523,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
