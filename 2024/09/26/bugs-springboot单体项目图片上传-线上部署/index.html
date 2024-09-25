@@ -6,16 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://boots-coder.github.io">
-  <title>Tag: 英语 | coderboots</title>
+  <title>bugs-springboot单体项目图片上传-线上部署 | coderboots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this is bootscoders blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="coderboots">
-<meta property="og:url" content="https://boots-coder.github.io/tags/%E8%8B%B1%E8%AF%AD/index.html">
+  <meta name="description" content="背景描述：有一个Springboot 的单体项目，前端使用theamleaf 写了一些动态页面+Wangeditor实现了富文本编辑器，后端使用springboot的ModelAndView做了页面的渲染和接收；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bugs-springboot单体项目图片上传-线上部署">
+<meta property="og:url" content="https://boots-coder.github.io/2024/09/26/bugs-springboot%E5%8D%95%E4%BD%93%E9%A1%B9%E7%9B%AE%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="coderboots">
-<meta property="og:description" content="this is bootscoders blog">
+<meta property="og:description" content="背景描述：有一个Springboot 的单体项目，前端使用theamleaf 写了一些动态页面+Wangeditor实现了富文本编辑器，后端使用springboot的ModelAndView做了页面的渲染和接收；">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926005629474.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926011232436.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926011459653.png">
+<meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926011948293.png">
+<meta property="article:published_time" content="2024-09-25T16:48:13.000Z">
+<meta property="article:modified_time" content="2024-09-25T17:26:52.779Z">
+<meta property="article:tag" content="bugs">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926005629474.png">
   
     <link rel="alternative" href="/atom.xml" title="coderboots" type="application/atom+xml">
   
@@ -143,65 +151,173 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-bugs-springboot单体项目图片上传-线上部署" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/07/18/%E8%AF%8D%E6%B1%87%E8%83%8C%E8%AF%B5%E4%B9%8B%E8%B7%AF/" class="archive-article-date">
-  	<time datetime="2024-07-17T16:45:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-07-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/07/18/%E8%AF%8D%E6%B1%87%E8%83%8C%E8%AF%B5%E4%B9%8B%E8%B7%AF/">词汇背诵之路</a>
+    <h1 class="article-title" itemprop="name">
+      bugs-springboot单体项目图片上传-线上部署
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2024/09/26/bugs-springboot%E5%8D%95%E4%BD%93%E9%A1%B9%E7%9B%AE%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" class="archive-article-date">
+  	<time datetime="2024-09-25T16:48:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="背景描述："><a href="#背景描述：" class="headerlink" title="背景描述："></a>背景描述：</h2><p>有一个Springboot 的单体项目，前端使用theamleaf 写了一些动态页面+Wangeditor实现了富文本编辑器，后端使用springboot的ModelAndView做了页面的渲染和接收；</p>
+<span id="more"></span>
+
+<h3 id="部署情况："><a href="#部署情况：" class="headerlink" title="部署情况："></a>部署情况：</h3><p>我采用docker 进行远程image部署</p>
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>图片上传功能在本地可以正常使用， 经查，服务器中没有出现新上传的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 9af5acbb5718 /bin/bash #进入容器</span><br><span class="line">jar tf it-source-0.0.1-SNAPSHOT.jar # 查看目录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926005629474.png" alt="image-20240926005629474"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs 9af5acbb5718 # 查看jar包日志</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926011232436.png" alt="image-20240926011232436"></p>
+<p>本地功能正常：</p>
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926011459653.png" alt="image-20240926011459653"></p>
+<h2 id="原因分析："><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h2><ul>
+<li>优先考虑跨域 – 没传成功</li>
+<li>那个地址很奇怪。。。 是否是因为docker 的原因？</li>
+<li></li>
+</ul>
+<p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240926011948293.png" alt="image-20240926011948293"></p>
+<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>a cup of coofee<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bugs</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2024/09/25/Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Graph convolutional network-based feature selection for  high-dimensional and low-sample size data</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">背景描述：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E6%83%85%E5%86%B5%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">部署情况：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">原因分析：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">解决：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
 
+  
+
+  
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+
+	
+		<section id="comments" class="comments">
+		  <style>
+			.utterances{max-width: 100%;}
+		  </style>
+			<script src="https://utteranc.es/client.js"
+					repo="boots-coder/boots-coder.github.io"
+					issue-term="pathname"
+					theme="github-light"
+					crossorigin="anonymous"
+					async>
+			</script>
+	  </section>
+	
+
+<!-- utteranc评论》 -->
 
           </div>
         </div>
@@ -223,9 +339,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
