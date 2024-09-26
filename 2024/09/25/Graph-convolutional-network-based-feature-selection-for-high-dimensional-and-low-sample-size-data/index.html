@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925202711114.png">
 <meta property="og:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925204021760.png">
 <meta property="article:published_time" content="2024-09-25T13:08:35.000Z">
-<meta property="article:modified_time" content="2024-09-25T13:09:30.659Z">
+<meta property="article:modified_time" content="2024-09-26T13:00:47.916Z">
 <meta property="article:tag" content="科研">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918103507714.png">
@@ -277,11 +277,15 @@
 <li><strong>递归和序列特征选择方法</strong>（RFE、SFS）能够动态地调整特征选择，但计算效率较低，不适合处理高维数据。</li>
 </ul>
 <h2 id="meterials-and-methods"><a href="#meterials-and-methods" class="headerlink" title="meterials and methods"></a>meterials and methods</h2><p> GRACES – &#x3D;&#x3D;寻找最优特征&#x3D;&#x3D;，使得优化损失最小</p>
-<p>如何寻找的？</p>
-<p>这样找为什么就是最小的？</p>
+<ul>
+<li><p>如何寻找的？</p>
+</li>
+<li><p>这样找为什么就是最小的？</p>
+</li>
+</ul>
 <p>5 parts:</p>
 <p>feature initialization, graph construction, neural network, multiple dropouts, and gradient computation</p>
-<h3 id="feature-initialization"><a href="#feature-initialization" class="headerlink" title="feature initialization  :"></a>feature initialization  :</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918103507714.png" alt="image-20240918103507714"></p>
+<h3 id="1-feature-initialization"><a href="#1-feature-initialization" class="headerlink" title="1 feature initialization  :"></a>1 feature initialization  :</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918103507714.png" alt="image-20240918103507714"></p>
 <ul>
 <li>为什么要引入偏置？？</li>
 <li>为什么引入1 ？其他值是否可行</li>
@@ -290,7 +294,7 @@
 <p>给训练过程设置锚点：由于该特征的值对所有样本都是相同的，因此它在最初不会对不同样本的区别产生太大影响</p>
 <p>可以， 1好处理</p>
 </blockquote>
-<h3 id="graph-construction"><a href="#graph-construction" class="headerlink" title="graph construction :"></a>graph construction :</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918104013866.png" alt="image-20240918104013866"></p>
+<h3 id="2-graph-construction"><a href="#2-graph-construction" class="headerlink" title="2 graph construction :"></a>2 graph construction :</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240918104013866.png" alt="image-20240918104013866"></p>
 <ul>
 <li>这里使用余弦相似度连接起来以后， 有什么具体的含义？<ul>
 <li>使用的 数据集的结构是什么？ 使用图表示后，节点表示什么东西</li>
@@ -303,7 +307,7 @@
 <p>22,283 个节点，每个节点代表一个基因。</p>
 <p>85个节点， 然后每一个节点有22283 个特征，这样连接相似节点后可以得到一个图</p>
 </blockquote>
-<h3 id="neural-network"><a href="#neural-network" class="headerlink" title="neural network"></a>neural network</h3><p>三层：线性输入- &gt; GCN -&gt; 线性输出</p>
+<h3 id="3-neural-network"><a href="#3-neural-network" class="headerlink" title="3 neural network"></a>3 neural network</h3><p>三层：线性输入- &gt; GCN -&gt; 线性输出</p>
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925184626246.png" alt="image-20240925184626246"></p>
 <ol>
 <li><p>可学习的权重矩阵 的初始值是多少？</p>
@@ -321,8 +325,8 @@
 </ol>
 <p>综上，节点的个数保持不变，但每个节点的特征信息会根据邻居的特征进行更新。这种更新通常使得节点特征变得更加丰富，但是否信息增加或减少取决于邻居节点的数量以及所采用的特征聚合策略。如果邻居节点提供的有用信息较多，特征信息可能会增加；但如果邻居信息中噪声较多，可能有效信息会相对减少。</p>
 </blockquote>
-<h3 id="multiple-dropouts"><a href="#multiple-dropouts" class="headerlink" title="multiple dropouts"></a>multiple dropouts</h3><p>多重dropput - 减少方差，降低过拟合概率（我们随机移除 GCN 层的隐藏神经元和输出层的神经元，操作次数为超参数 PPP 和 mmm 的乘积（GRACES中的超参数））</p>
-<h3 id="gradient-computation"><a href="#gradient-computation" class="headerlink" title="gradient computation"></a>gradient computation</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925210003017.png" alt="image-20240925210003017"></p>
+<h3 id="4-multiple-dropouts"><a href="#4-multiple-dropouts" class="headerlink" title="4 multiple dropouts"></a>4 multiple dropouts</h3><p>多重dropput - 减少方差，降低过拟合概率（我们随机移除 GCN 层的隐藏神经元和输出层的神经元，操作次数为超参数 PPP 和 mmm 的乘积（GRACES中的超参数））</p>
+<h3 id="5-gradient-computation"><a href="#5-gradient-computation" class="headerlink" title="5 gradient computation"></a>5 gradient computation</h3><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925210003017.png" alt="image-20240925210003017"></p>
 <blockquote>
 <p>通过计算梯度矩阵后，可以基于G的列模大小选择下一个特征，公式如(6)</p>
 <p>引入高斯噪声</p>
@@ -340,7 +344,7 @@
 <blockquote>
 <p>公式8:<img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925194854114.png" alt="image-20240925194854114"></p>
 </blockquote>
-<h2 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4 Experiments"></a>4 Experiments</h2><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925202711114.png" alt="image-20240925202711114"></p>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925202711114.png" alt="image-20240925202711114"></p>
 <blockquote>
 <p><strong>总结</strong>： GRACES 在合成数据集上，与其他方法相比表现较为一致，尤其在低难度和中等难度的数据集上具有较好的特征选择能力和 AUROC 表现。然而，在高难度数据集上，它的表现相对较为不稳定，与其他方法相比稍逊一筹。</p>
 </blockquote>
@@ -353,7 +357,7 @@
 <blockquote>
 <p><img src="https://markdown-pictures-jhx.oss-cn-beijing.aliyuncs.com/picgo/image-20240925204021760.png" alt="image-20240925204021760"></p>
 </blockquote>
-<h3 id="discussion"><a href="#discussion" class="headerlink" title="discussion"></a>discussion</h3><p>我们进行了消融研究，以证明这两种减少过拟合技术的有效性。</p>
+<h2 id="discussion"><a href="#discussion" class="headerlink" title="discussion"></a>discussion</h2><p>我们进行了消融研究，以证明这两种减少过拟合技术的有效性。</p>
 <ul>
 <li>引入高斯噪声和 F 校正</li>
 </ul>
@@ -364,7 +368,7 @@
 <blockquote>
 <p>后续可以改进， 计算效率低问题</p>
 </blockquote>
-<h3 id="conclusion"><a href="#conclusion" class="headerlink" title="conclusion"></a>conclusion</h3><p><strong>GRACES 方法的成功</strong>：</p>
+<h2 id="conclusion"><a href="#conclusion" class="headerlink" title="conclusion"></a>conclusion</h2><p><strong>GRACES 方法的成功</strong>：</p>
 <ul>
 <li>GRACES 在 HDLSS 数据集上表现出色，通过结合 GCN 和多种减少过拟合的技术（如 dropout、高斯噪声和 F 校正），相比传统方法具有显著优势。</li>
 </ul>
@@ -376,6 +380,18 @@
 <ul>
 <li>文中建议，未来可以研究更复杂的网络架构，如超图卷积网络，这种架构可以捕捉样本间的高阶关联，可能会提供更精确的样本表示。此外，考虑使用更多的减少过拟合技术（如归一化）可以进一步提升 GRACES 的性能。</li>
 </ul>
+<h2 id="个人思考的和收获"><a href="#个人思考的和收获" class="headerlink" title="个人思考的和收获"></a>个人思考的和收获</h2><ul>
+<li>对于图卷积网络的构建和运行过程，算法更多了解</li>
+<li>对于评估的方法、数据集的划分， 有了更多的考虑，考虑最好的性能的</li>
+</ul>
+<h2 id="后续的问题和规划"><a href="#后续的问题和规划" class="headerlink" title="后续的问题和规划"></a>后续的问题和规划</h2><ul>
+<li>ANOVA F算法 是什么？具体是如何运行的</li>
+</ul>
+<ol>
+<li>继续读中文论文– 读学长们的毕业设计</li>
+<li>代码实现图卷积</li>
+<li>读级联相关论文，考虑将特征提取模块进行置换</li>
+</ol>
 
       
 
@@ -472,7 +488,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data%EF%BC%88%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AF%B9%E9%AB%98%E4%BD%8E%E7%BA%AC%E7%89%B9%E5%BE%81%E7%9A%84%E9%80%89%E6%8B%A9%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Graph convolutional network-based feature selection for  high-dimensional and low-sample size data（卷积神经网络对高低纬特征的选择）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-work"><span class="toc-number">1.3.</span> <span class="toc-text">Related work</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meterials-and-methods"><span class="toc-number">1.4.</span> <span class="toc-text">meterials and methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#feature-initialization"><span class="toc-number">1.4.1.</span> <span class="toc-text">feature initialization  :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#graph-construction"><span class="toc-number">1.4.2.</span> <span class="toc-text">graph construction :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#neural-network"><span class="toc-number">1.4.3.</span> <span class="toc-text">neural network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multiple-dropouts"><span class="toc-number">1.4.4.</span> <span class="toc-text">multiple dropouts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gradient-computation"><span class="toc-number">1.4.5.</span> <span class="toc-text">gradient computation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Experiments"><span class="toc-number">1.5.</span> <span class="toc-text">4 Experiments</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#discussion"><span class="toc-number">1.5.1.</span> <span class="toc-text">discussion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#conclusion"><span class="toc-number">1.5.2.</span> <span class="toc-text">conclusion</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Graph-convolutional-network-based-feature-selection-for-high-dimensional-and-low-sample-size-data%EF%BC%88%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AF%B9%E9%AB%98%E4%BD%8E%E7%BA%AC%E7%89%B9%E5%BE%81%E7%9A%84%E9%80%89%E6%8B%A9%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Graph convolutional network-based feature selection for  high-dimensional and low-sample size data（卷积神经网络对高低纬特征的选择）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-work"><span class="toc-number">1.3.</span> <span class="toc-text">Related work</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#meterials-and-methods"><span class="toc-number">1.4.</span> <span class="toc-text">meterials and methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-feature-initialization"><span class="toc-number">1.4.1.</span> <span class="toc-text">1 feature initialization  :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-graph-construction"><span class="toc-number">1.4.2.</span> <span class="toc-text">2 graph construction :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-neural-network"><span class="toc-number">1.4.3.</span> <span class="toc-text">3 neural network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-multiple-dropouts"><span class="toc-number">1.4.4.</span> <span class="toc-text">4 multiple dropouts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-gradient-computation"><span class="toc-number">1.4.5.</span> <span class="toc-text">5 gradient computation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Experiments"><span class="toc-number">1.5.</span> <span class="toc-text">Experiments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#discussion"><span class="toc-number">1.6.</span> <span class="toc-text">discussion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conclusion"><span class="toc-number">1.7.</span> <span class="toc-text">conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83%E7%9A%84%E5%92%8C%E6%94%B6%E8%8E%B7"><span class="toc-number">1.8.</span> <span class="toc-text">个人思考的和收获</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%BB%AD%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%84%E5%88%92"><span class="toc-number">1.9.</span> <span class="toc-text">后续的问题和规划</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
